@@ -1,1 +1,0 @@
-# 25MCA20098_RaviRanjan_KargilBatch
