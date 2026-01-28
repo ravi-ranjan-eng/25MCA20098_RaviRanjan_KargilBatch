@@ -1,3 +1,15 @@
+👤 Student Details
+
+Name Ravi Ranjan Kumar
+
+UID 25MCA20098
+
+Branch MCA General
+
+Semester II
+
+Date of Performance 27/01/2026
+
 🎯 Aim
 
 To implement conditional logic in PostgreSQL using CASE expressions and IF–ELSE constructs for classification, validation, and rule-based decision-making.
