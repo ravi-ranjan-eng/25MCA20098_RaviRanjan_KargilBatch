@@ -7,13 +7,21 @@ To implement conditional logic in PostgreSQL using CASE expressions and IF–ELS
 🐘 PostgreSQL
 
 🎓 Objectives
-Objective	Description
+
+Objective	      
+
 ✔️ Conditional Execution	Understand how SQL evaluates conditions
+
 ✔️ CASE Expressions	Apply condition-based classification
+
 ✔️ IF–ELSE Logic	Use PL/pgSQL to control procedural flow
+
 ✔️ Data Categorization	Implement grading and violation logic
+
 ✔️ Backend Skills	Prepare for interviews & backend roles
+
 📘 Theory Overview
+
 🔹 CASE Expression
 
 Used in SELECT, UPDATE, ORDER BY:
@@ -35,15 +43,21 @@ Perfect for backend rule validation
 Used in functions, procedures, and DO blocks
 
 🧪 Experiment Steps
+
 Step 1 – CASE Classification
 
 Classify violation counts as:
 
-Count Range	Category
-0	No Violation
-1–3	Minor Violation
-4–8	Moderate Violation
-≥ 9	Critical Violation
+Count  ->   Range	Category
+
+0	   ->   No Violation
+
+1–3	    ->  Minor Violation
+
+4–8	     -> Moderate Violation
+
+≥ 9	     ->  Critical Violation
+
 Step 2 – Update Using CASE
 
 Use CASE inside UPDATE to assign:
@@ -71,97 +85,40 @@ Sort rows based on severity using CASE inside ORDER BY.
 All SQL files are provided inside /sql/.
 
 ✔️ 01_create_tables.sql
-CREATE TABLE schema_violations (
-    id SERIAL PRIMARY KEY,
-    schema_name VARCHAR(50),
-    violation_count INT
-);
 
-INSERT INTO schema_violations (schema_name, violation_count) VALUES
-('Schema_A', 0),
-('Schema_B', 2),
-('Schema_C', 5),
-('Schema_D', 9),
-('Schema_E', 14);
+<img width="573" height="241" alt="image" src="https://github.com/user-attachments/assets/1aefa313-a452-4a5f-b505-01db8482121e" />
+
+
 
 ✔️ 02_case_classification.sql
-SELECT 
-    schema_name,
-    violation_count,
-    CASE
-        WHEN violation_count = 0 THEN 'No Violation'
-        WHEN violation_count BETWEEN 1 AND 3 THEN 'Minor Violation'
-        WHEN violation_count BETWEEN 4 AND 8 THEN 'Moderate Violation'
-        ELSE 'Critical Violation'
-    END AS violation_level
-FROM schema_violations;
+
+<img width="603" height="211" alt="image" src="https://github.com/user-attachments/assets/8ede94cb-fbca-4c9e-95b0-d38a5318679f" />
+
 
 ✔️ 03_case_update_status.sql
-ALTER TABLE schema_violations
-ADD COLUMN approval_status VARCHAR(20);
 
-UPDATE schema_violations
-SET approval_status = CASE
-    WHEN violation_count = 0 THEN 'Approved'
-    WHEN violation_count BETWEEN 1 AND 5 THEN 'Needs Review'
-    ELSE 'Rejected'
-END;
+<img width="522" height="186" alt="image" src="https://github.com/user-attachments/assets/4bc3577d-7f30-4fdc-908a-3a86a5f9186b" />
+
 
 ✔️ 04_if_else_block.sql
-DO $$
-DECLARE
-    v_count INT := 7;
-BEGIN
-    IF v_count = 0 THEN
-        RAISE NOTICE 'No Violations Found.';
-    ELSIF v_count BETWEEN 1 AND 3 THEN
-        RAISE NOTICE 'Minor Violations Present.';
-    ELSIF v_count BETWEEN 4 AND 8 THEN
-        RAISE NOTICE 'Moderate Violations Present.';
-    ELSE
-        RAISE NOTICE 'Critical Violations Present.';
-    END IF;
-END$$;
+
+<img width="446" height="480" alt="image" src="https://github.com/user-attachments/assets/1a8863db-763f-42ad-b7df-53dc206d14a7" />
+
 
 ✔️ 05_grading_system.sql
-CREATE TABLE students (
-    id SERIAL PRIMARY KEY,
-    student_name VARCHAR(50),
-    marks INT
-);
 
-INSERT INTO students (student_name, marks) VALUES
-('Arjun', 92),
-('Riya', 76),
-('Kabir', 64),
-('Simran', 48),
-('Vikram', 33);
+<img width="446" height="209" alt="image" src="https://github.com/user-attachments/assets/0458005e-cab9-4df6-82bc-8732d1e728b7" />
 
-SELECT 
-    student_name,
-    marks,
-    CASE
-        WHEN marks >= 90 THEN 'A'
-        WHEN marks >= 75 THEN 'B'
-        WHEN marks >= 60 THEN 'C'
-        WHEN marks >= 40 THEN 'D'
-        ELSE 'Fail'
-    END AS grade
-FROM students;
 
 ✔️ 06_custom_sorting.sql
-SELECT *
-FROM schema_analysis
-ORDER BY 
-    CASE
-        WHEN violation_count >= 9 THEN 1
-        WHEN violation_count BETWEEN 4 AND 8 THEN 2
-        WHEN violation_count BETWEEN 1 AND 3 THEN 3
-        ELSE 4
-    END;
+
+<img width="455" height="210" alt="image" src="https://github.com/user-attachments/assets/0a970d97-7777-4ab4-8a2a-88ac6236393f" />
+
+
 
 📊 Input / Output Analysis
-Input
+
+#Input
 
 Schema names
 
@@ -171,7 +128,7 @@ Student names
 
 Marks
 
-Output
+#Output
 
 Violation categories
 
