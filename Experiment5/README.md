@@ -1,21 +1,24 @@
-Name: Ravi Ranjan Kumar
-UID: 25MCA20098
-Branch: MCA General
-Semester: II
-Subject: Technical Training
+Name: Ravi Ranjan Kumar<br>
+UID: 25MCA20098<br>
+Branch: MCA General<br>
+Semester: II<br>
+Subject: Technical Training<br
 Subject Code: 25CAP-652
 
+<hr>
 
 📌 Experiment
 
 Title: Implementation and Analysis of Cursors for Row-by-Row Processing in PostgreSQL.<br>
 Description: This worksheet focuses on understanding and implementing SQL cursors in PostgreSQL for sequential row-by-row processing of query results. The practical demonstrates how cursors are declared, opened, fetched, and closed to perform record-specific operations such as conditional salary updates and dynamic calculations. These techniques are widely used in enterprise database applications like payroll systems, reporting modules, and data migration tasks where procedural logic is required on individual records.
 
+<hr>
 
 🛠️ Tools Used
 
 PostgreSQL — Open-source relational database system
 
+<hr>
 
 🎯 Objective
 
@@ -31,6 +34,7 @@ To analyze row-by-row data manipulation using SQL cursors
 
 To relate cursor usage with real-world scenarios like payroll updates and reporting
 
+<hr>
 
 🧪 Practical / Experiment Steps
 
@@ -48,6 +52,7 @@ Verify updated records after cursor execution
 
 Record outputs and observations
 
+<hr>
 
 ⚙️ Procedure of the Experiment and Screenshots
 
