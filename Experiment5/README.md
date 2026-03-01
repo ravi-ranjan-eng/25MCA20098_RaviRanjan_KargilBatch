@@ -2,7 +2,7 @@ Name: Ravi Ranjan Kumar<br>
 UID: 25MCA20098<br>
 Branch: MCA General<br>
 Semester: II<br>
-Subject: Technical Training<br
+Subject: Technical Training<br>
 Subject Code: 25CAP-652
 
 <hr>
